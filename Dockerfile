@@ -15,8 +15,8 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 COPY app.py /usr/src/app/
 COPY templates/index.html /usr/src/app/templates/
 
-# tell the port number the container should expose
-EXPOSE 8080
+# tell the port number 5000 of flask app the container should expose
+EXPOSE 5000
 
 # run the application
 CMD ["python3", "/usr/src/app/app.py"]
