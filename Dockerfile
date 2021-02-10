@@ -1,5 +1,8 @@
-# our base image
-FROM alpine:3.13
+# Test web-app using Phtyon Flask on Alpine to build Docker Image
+# Linux Arm664 (aarch64), X86 , and X86_64
+FROM alpine
+
+LABEL maintainer="prasanta.kumar@outlook.com"
 
 # Install python and pip
 RUN apk add --update py3-pip
@@ -13,7 +16,7 @@ COPY app.py /usr/src/app/
 COPY templates/index.html /usr/src/app/templates/
 
 # tell the port number the container should expose
-EXPOSE 5000
+EXPOSE 8080
 
 # run the application
 CMD ["python3", "/usr/src/app/app.py"]
